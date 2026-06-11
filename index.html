@@ -3,265 +3,262 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
-<title>山林小巷 · 数字化升级方案</title>
+<title>山林小巷·川卤酒馆 · 数字化升级方案</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
 
 *{margin:0;padding:0;box-sizing:border-box}
 
 :root{
-  --forest:#1A3A32;
-  --forest-light:#2D5A4E;
-  --forest-mist:#E8F0EC;
-  --ember:#B84A2C;
-  --ember-light:#FDF0EB;
-  --gold:#C4975A;
-  --gold-light:#FBF3E8;
-  --cream:#F7F3EE;
+  --wine:#6B1D1D;
+  --wine-light:#FDF0EE;
+  --ember:#C45A3C;
+  --ember-light:#FEF6F2;
+  --wood:#B8864E;
+  --wood-light:#FBF3E8;
+  --warm:#F5EDE4;
   --stone:#8A8A8A;
   --charcoal:#2D2D2D;
   --white:#FFFFFF;
-  --bg:#FAF8F5;
+  --bg:#FCF9F6;
 }
 
 body{
   font-family:'Inter','PingFang SC','Microsoft YaHei',sans-serif;
   background:var(--bg);color:var(--charcoal);line-height:1.7;
   -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
 }
 
-/* ── Navigation ── */
+/* ── Nav ── */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:1000;
-  background:rgba(250,248,245,0.88);backdrop-filter:blur(16px);
+  background:rgba(252,249,246,0.9);backdrop-filter:blur(16px);
   border-bottom:1px solid rgba(0,0,0,0.04);
-  padding:0 16px;height:48px;
-  display:flex;align-items:center;
-  overflow-x:auto;scrollbar-width:none;
+  padding:0 12px;height:48px;
+  display:flex;align-items:center;overflow-x:auto;scrollbar-width:none;
 }
 nav::-webkit-scrollbar{display:none}
 nav a{
-  white-space:nowrap;font-size:12px;color:var(--stone);
-  text-decoration:none;padding:6px 12px;border-radius:6px;
-  flex-shrink:0;font-weight:500;transition:all 0.2s;
-  letter-spacing:0.3px;
+  white-space:nowrap;font-size:12px;color:var(--stone);text-decoration:none;
+  padding:6px 12px;border-radius:6px;flex-shrink:0;font-weight:500;
+  transition:all 0.2s;letter-spacing:0.3px;
 }
-nav a:hover,nav a.active{color:var(--forest);background:var(--forest-mist)}
+nav a:hover,nav a.active{color:var(--wine);background:var(--wine-light)}
 
 /* ── Hero ── */
 .hero{
-  min-height:100vh;padding:80px 24px 40px;
+  min-height:92vh;padding:80px 24px 32px;
   display:flex;flex-direction:column;justify-content:center;align-items:center;
   text-align:center;position:relative;
-  background:linear-gradient(160deg,#1A3A32 0%,#2D5A4E 35%,#3A2C1E 70%,#1A1A1A 100%);
+  background:linear-gradient(160deg,#1A0A0A 0%,#3A1A1A 30%,#6B1D1D 55%,#8B4513 80%,#1A1A0A 100%);
   color:#FFF;overflow:hidden;
 }
 .hero::before{
   content:'';position:absolute;top:0;left:0;right:0;bottom:0;
-  background:radial-gradient(ellipse at 30% 50%,rgba(180,74,44,0.08) 0%,transparent 60%),
-              radial-gradient(ellipse at 70% 30%,rgba(196,151,90,0.06) 0%,transparent 50%);
+  background:
+    radial-gradient(ellipse at 20% 40%,rgba(196,90,60,0.1) 0%,transparent 50%),
+    radial-gradient(ellipse at 80% 60%,rgba(196,151,90,0.08) 0%,transparent 50%);
   pointer-events:none;
 }
-.hero-glow{
-  position:absolute;top:-20%;right:-10%;width:500px;height:500px;
+.hero-glow1{
+  position:absolute;top:-10%;left:-5%;width:400px;height:400px;
+  background:radial-gradient(circle,rgba(196,90,60,0.06) 0%,transparent 70%);
+  border-radius:50%;pointer-events:none;
+}
+.hero-glow2{
+  position:absolute;bottom:-10%;right:-5%;width:350px;height:350px;
   background:radial-gradient(circle,rgba(196,151,90,0.05) 0%,transparent 70%);
   border-radius:50%;pointer-events:none;
 }
 .hero .badge{
   display:inline-flex;align-items:center;gap:6px;
-  background:rgba(255,255,255,0.06);backdrop-filter:blur(6px);
+  background:rgba(196,90,60,0.12);backdrop-filter:blur(6px);
   padding:6px 18px;border-radius:100px;
-  font-size:11px;letter-spacing:2px;margin-bottom:24px;
-  border:1px solid rgba(255,255,255,0.06);
-  color:rgba(255,255,255,0.6);
+  font-size:10px;letter-spacing:2px;margin-bottom:20px;
+  border:1px solid rgba(196,90,60,0.15);color:rgba(255,255,255,0.7);
 }
-.hero .badge em{font-style:normal;color:var(--gold)}
 .hero h1{
   font-family:'Noto Serif SC',serif;
   font-size:clamp(32px,6vw,52px);font-weight:900;
-  margin-bottom:4px;letter-spacing:6px;
+  margin-bottom:2px;letter-spacing:8px;
 }
-.hero h1 span{color:var(--gold);font-weight:900}
-.hero .sub{
-  font-size:clamp(13px,2vw,16px);opacity:0.5;
-  margin-bottom:28px;letter-spacing:4px;font-weight:300;
+.hero .sub-title{
+  font-family:'Noto Serif SC',serif;
+  font-size:clamp(14px,2.5vw,22px);font-weight:600;
+  color:var(--wood);margin-bottom:12px;letter-spacing:12px;
 }
+.hero .slogan{
+  font-size:clamp(11px,1.5vw,14px);opacity:0.55;
+  margin-bottom:24px;letter-spacing:2px;line-height:1.8;
+}
+.hero .slogan span{display:inline-block;margin:0 6px;}
 .hero-stats{
-  display:flex;gap:24px;flex-wrap:wrap;justify-content:center;
-  margin-top:8px;
+  display:flex;gap:20px;flex-wrap:wrap;justify-content:center;
 }
-.hero-stat{
-  text-align:center;
-}
+.hero-stat{text-align:center;}
 .hero-stat .num{
   font-family:'Noto Serif SC',serif;
-  font-size:clamp(28px,4vw,40px);font-weight:900;
-  background:linear-gradient(135deg,var(--gold),#E8C47A);
+  font-size:clamp(24px,3.5vw,36px);font-weight:900;
+  background:linear-gradient(135deg,var(--wood),#E8C47A);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;
   background-clip:text;
 }
-.hero-stat .lbl{font-size:11px;opacity:0.4;letter-spacing:1px;margin-top:2px;}
+.hero-stat .lbl{font-size:11px;opacity:0.35;letter-spacing:1px;margin-top:2px;}
 .hero-tags{
-  display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:24px;
+  display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:20px;
 }
 .hero-tags span{
-  background:rgba(255,255,255,0.04);
-  padding:5px 14px;border-radius:100px;font-size:11px;
-  border:1px solid rgba(255,255,255,0.04);
-  color:rgba(255,255,255,0.5);
+  background:rgba(255,255,255,0.04);padding:5px 14px;border-radius:100px;
+  font-size:11px;border:1px solid rgba(255,255,255,0.04);
+  color:rgba(255,255,255,0.45);
 }
-
-/* ── Scroll indicator ── */
 .scroll-hint{
-  position:absolute;bottom:24px;left:50%;transform:translateX(-50%);
-  display:flex;flex-direction:column;align-items:center;gap:4px;
-  opacity:0.3;animation:bounce 2s infinite;
+  position:absolute;bottom:20px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:4px;opacity:0.25;
+  animation:bounce 2s infinite;
 }
 .scroll-hint span{font-size:10px;letter-spacing:2px;}
-.scroll-hint .arrow{width:1px;height:24px;background:rgba(255,255,255,0.3);margin-top:4px;}
+.scroll-hint .arrow{width:1px;height:20px;background:rgba(255,255,255,0.3);margin-top:4px;}
 @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
 
 /* ── Container ── */
-.container{max-width:840px;margin:0 auto;padding:0 20px;}
+.container{max-width:820px;margin:0 auto;padding:0 20px;}
 
-/* ── Sections ── */
-.section{
-  padding:80px 0;border-bottom:1px solid rgba(0,0,0,0.04);
-}
+.section{padding:72px 0;border-bottom:1px solid rgba(0,0,0,0.04)}
 .section:last-child{border-bottom:none}
 
 .section-label{
   font-size:10px;letter-spacing:4px;text-transform:uppercase;
-  color:var(--gold);font-weight:600;margin-bottom:8px;
+  color:var(--wood);font-weight:600;margin-bottom:6px;
 }
 .section-title{
   font-family:'Noto Serif SC',serif;
-  font-size:clamp(22px,3vw,30px);font-weight:700;
-  color:var(--charcoal);margin-bottom:6px;line-height:1.3;
+  font-size:clamp(20px,2.8vw,28px);font-weight:700;
+  color:var(--charcoal);margin-bottom:4px;line-height:1.3;
 }
 .section-title em{font-style:normal;color:var(--ember)}
 .section-sub{
-  font-size:14px;color:var(--stone);margin-bottom:28px;line-height:1.6;
+  font-size:14px;color:var(--stone);margin-bottom:24px;line-height:1.6;
 }
 .section-divider{
-  width:36px;height:3px;background:var(--gold);border-radius:2px;
-  margin-bottom:24px;
+  width:36px;height:3px;background:var(--ember);border-radius:2px;
+  margin-bottom:20px;
 }
 
 /* ── Cards ── */
 .card{
-  background:var(--white);border-radius:14px;padding:28px 24px;
-  margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,0.03),0 1px 2px rgba(0,0,0,0.03);
-  transition:transform 0.2s,box-shadow 0.2s;
+  background:var(--white);border-radius:12px;padding:24px 22px;
+  margin-bottom:10px;
+  box-shadow:0 1px 3px rgba(0,0,0,0.02),0 1px 2px rgba(0,0,0,0.02);
   border:1px solid rgba(0,0,0,0.03);
+  transition:transform 0.2s,box-shadow 0.2s;
 }
-.card:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,0,0,0.06);}
+.card:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(0,0,0,0.05);}
 .card:last-child{margin-bottom:0}
-.card-icon{font-size:28px;margin-bottom:8px;display:block;}
-.card h3{font-size:16px;font-weight:700;margin-bottom:6px;color:var(--charcoal);}
+.card-icon{font-size:26px;margin-bottom:6px;display:block;}
+.card h3{font-size:15px;font-weight:700;margin-bottom:5px;color:var(--charcoal);}
 .card p,.card li{font-size:14px;color:#666;line-height:1.7;}
-.card ul{padding-left:18px;margin:6px 0;}
-.card ul li{margin-bottom:4px;}
+.card ul{padding-left:18px;margin:5px 0;}
+.card ul li{margin-bottom:3px;}
 .card ul li::marker{color:var(--ember);}
-.card .badge-tag{
+.badge-tag{
   display:inline-block;font-size:10px;font-weight:600;padding:3px 10px;
-  border-radius:4px;margin-bottom:8px;letter-spacing:1px;
+  border-radius:4px;margin-bottom:6px;letter-spacing:1px;
 }
-.badge-tag.forest{background:var(--forest-mist);color:var(--forest)}
+.badge-tag.wine{background:var(--wine-light);color:var(--wine)}
 .badge-tag.ember{background:var(--ember-light);color:var(--ember)}
-.badge-tag.gold{background:var(--gold-light);color:#8B6914}
-.badge-tag.white-bg{background:#F5F5F5;color:#555}
+.badge-tag.wood{background:var(--wood-light);color:#8B6914}
 
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
 @media(max-width:640px){.grid-2,.grid-3{grid-template-columns:1fr}}
 
-/* ── Highlight boxes ── */
+/* ── Highlight ── */
 .highlight{
-  padding:18px 20px;border-radius:12px;margin:14px 0;
-  border-left:3px solid var(--gold);
+  padding:16px 18px;border-radius:10px;margin:12px 0;
+  font-size:14px;color:#555;line-height:1.7;
 }
-.highlight.forest{background:var(--forest-mist);border-left-color:var(--forest);}
-.highlight.ember{background:var(--ember-light);border-left-color:var(--ember);}
-.highlight.gold{background:var(--gold-light);border-left-color:var(--gold);}
-.highlight.dark{background:#F0F0F0;border-left-color:var(--charcoal);}
-.highlight p{font-size:14px;color:#555;line-height:1.7;}
+.highlight.wine{background:var(--wine-light);border-left:3px solid var(--wine);}
+.highlight.ember{background:var(--ember-light);border-left:3px solid var(--ember);}
+.highlight.wood{background:var(--wood-light);border-left:3px solid var(--wood);}
+.highlight.dark{background:#F5F5F0;border-left:3px solid var(--charcoal);}
 .highlight strong{color:var(--charcoal);}
 
 /* ── Tables ── */
-.table-wrap{
-  overflow-x:auto;margin:12px 0;border-radius:12px;
-  border:1px solid rgba(0,0,0,0.04);
-}
+.table-wrap{overflow-x:auto;margin:10px 0;border-radius:10px;border:1px solid rgba(0,0,0,0.04);}
 table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);}
-th{
-  padding:11px 14px;text-align:left;font-weight:600;font-size:11px;
-  letter-spacing:1px;text-transform:uppercase;
-  background:var(--forest);color:#FFF;
-}
-th.gold-bg{background:var(--gold);color:#FFF;}
+th{padding:10px 14px;text-align:left;font-weight:600;font-size:11px;letter-spacing:1px;}
+th.wine-bg{background:var(--wine);color:#FFF;}
 th.ember-bg{background:var(--ember);color:#FFF;}
-td{padding:10px 14px;border-bottom:1px solid #F0EDE8;color:#666;}
+th.wood-bg{background:var(--wood);color:#FFF;}
+td{padding:9px 14px;border-bottom:1px solid #F0EDE8;color:#666;}
 tr:last-child td{border-bottom:none;}
 tr:hover td{background:#FAFAFA;}
 
-/* ── Stats bar ── */
-.stats-row{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0;}
+/* ── Stats ── */
+.stats-row{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0;}
 .stat-item{
-  flex:1;min-width:90px;background:var(--white);border-radius:10px;
-  padding:16px 12px;text-align:center;
-  border:1px solid rgba(0,0,0,0.04);
+  flex:1;min-width:80px;background:var(--white);border-radius:8px;
+  padding:14px 10px;text-align:center;border:1px solid rgba(0,0,0,0.04);
 }
 .stat-item .num{
   font-family:'Noto Serif SC',serif;
-  font-size:24px;font-weight:900;color:var(--forest);
+  font-size:22px;font-weight:900;color:var(--wine);
 }
-.stat-item.gold .num{color:var(--gold)}
 .stat-item.ember .num{color:var(--ember)}
-.stat-item .lbl{font-size:11px;color:var(--stone);margin-top:3px;letter-spacing:0.5px;}
+.stat-item.wood .num{color:var(--wood)}
+.stat-item .lbl{font-size:10px;color:var(--stone);margin-top:2px;letter-spacing:0.5px;}
 
-/* ── Quote block ── */
+/* ── Quote ── */
 .quote-block{
-  background:var(--forest);color:#FFF;border-radius:14px;
-  padding:32px 28px;margin:14px 0;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#1A0A0A,#3A1A1A);color:#FFF;
+  border-radius:12px;padding:28px 24px;margin:12px 0;position:relative;overflow:hidden;
 }
 .quote-block::before{
-  content:'"';position:absolute;top:-10px;left:12px;
-  font-size:100px;opacity:0.06;font-family:serif;line-height:1;
+  content:'"';position:absolute;top:-8px;left:10px;
+  font-size:80px;opacity:0.06;font-family:serif;line-height:1;
 }
-.quote-block p{font-size:15px;opacity:0.9;line-height:1.8;font-weight:300;}
-.quote-block strong{color:var(--gold);font-weight:600;}
+.quote-block p{font-size:14px;opacity:0.85;line-height:1.8;font-weight:300;}
+.quote-block strong{color:var(--wood);font-weight:600;}
 
 /* ── Flow steps ── */
-.flow-steps{display:flex;gap:0;margin:14px 0;background:var(--white);border-radius:12px;overflow:hidden;border:1px solid rgba(0,0,0,0.04);}
-.flow-step{flex:1;padding:18px 14px;text-align:center;position:relative;}
+.flow-steps{display:flex;margin:12px 0;background:var(--white);border-radius:10px;overflow:hidden;border:1px solid rgba(0,0,0,0.04);}
+.flow-step{flex:1;padding:16px 12px;text-align:center;}
 .flow-step+.flow-step{border-left:1px dashed rgba(0,0,0,0.06);}
-.flow-step .step-num{display:inline-block;width:28px;height:28px;line-height:28px;border-radius:50%;background:var(--forest-mist);color:var(--forest);font-size:12px;font-weight:700;margin-bottom:6px;}
-.flow-step .step-title{font-size:13px;font-weight:600;color:var(--charcoal);}
+.flow-step .step-num{
+  display:inline-block;width:26px;height:26px;line-height:26px;
+  border-radius:50%;background:var(--wine-light);color:var(--wine);
+  font-size:11px;font-weight:700;margin-bottom:4px;
+}
+.flow-step .step-title{font-size:12px;font-weight:600;color:var(--charcoal);}
 .flow-step .step-desc{font-size:11px;color:var(--stone);margin-top:2px;}
 @media(max-width:640px){.flow-steps{flex-direction:column;}.flow-step+.flow-step{border-left:none;border-top:1px dashed rgba(0,0,0,0.06);}}
 
-/* ── Footer ── */
-.footer{
-  text-align:center;padding:32px 20px;
-  color:var(--stone);font-size:12px;letter-spacing:1px;
-}
-
-/* ── Diagnosis report ── */
+/* ── Diag items ── */
 .diag-item{
-  display:flex;gap:12px;align-items:flex-start;padding:12px 0;
+  display:flex;gap:12px;align-items:flex-start;padding:10px 0;
   border-bottom:1px solid #F0EDE8;
 }
 .diag-item:last-child{border-bottom:none;}
-.diag-item .diag-icon{flex-shrink:0;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;}
-.diag-item .diag-icon.green{background:var(--forest-mist);}
-.diag-item .diag-icon.red{background:var(--ember-light);}
+.diag-item .diag-icon{
+  flex-shrink:0;width:30px;height:30px;border-radius:6px;
+  display:flex;align-items:center;justify-content:center;font-size:14px;
+}
+.diag-item .diag-icon.green{background:#E8F0EC;}
+.diag-item .diag-icon.red{background:var(--wine-light);}
 .diag-item .diag-text{flex:1;}
 .diag-item .diag-text h4{font-size:14px;font-weight:600;color:var(--charcoal);}
 .diag-item .diag-text p{font-size:13px;color:#777;}
 
-/* smooth scroll */
+/* ── Video-style tag ── */
+.vibe-tag{
+  display:inline-block;background:var(--wine-light);color:var(--wine);
+  padding:2px 10px;border-radius:4px;font-size:11px;font-weight:600;
+  border:1px solid rgba(107,29,29,0.08);margin:2px;
+}
+
+.footer{text-align:center;padding:28px 20px;color:var(--stone);font-size:11px;letter-spacing:1px;}
+
 html{scroll-behavior:smooth;}
 </style>
 </head>
@@ -280,22 +277,30 @@ html{scroll-behavior:smooth;}
 </nav>
 
 <div class="hero">
-  <div class="hero-glow"></div>
-  <div class="badge">🏔️ 数字化升级方案 · 2026</div>
-  <h1>山林·<span>小巷</span></h1>
-  <div class="sub">领世郡 · 川菜 · 4.7⭐ ¥88/人</div>
+  <div class="hero-glow1"></div>
+  <div class="hero-glow2"></div>
+  <div class="badge">🏮 数字化升级方案 · 2026</div>
+  <h1>山林小巷</h1>
+  <div class="sub-title">川·卤·酒馆</div>
+  <div class="slogan">
+    <span>#不做预制菜</span>
+    <span>#不用冻货</span>
+    <span>#性价比超高香辣蟹</span><br>
+    <span>#用心做餐</span>
+    <span>#好吃不贵的情怀餐厅</span>
+  </div>
   <div class="hero-stats">
     <div class="hero-stat"><div class="num">4.7</div><div class="lbl">评分 ⭐</div></div>
     <div class="hero-stat"><div class="num">88</div><div class="lbl">人均 ¥</div></div>
     <div class="hero-stat"><div class="num">领世郡</div><div class="lbl">商圈</div></div>
-    <div class="hero-stat"><div class="num">川菜</div><div class="lbl">品类</div></div>
+    <div class="hero-stat"><div class="num">川卤酒馆</div><div class="lbl">品类</div></div>
   </div>
   <div class="hero-tags">
     <span>📋 门店诊断</span>
     <span>📱 智能收银</span>
-    <span>🔗 团购运营</span>
-    <span>💳 会员体系</span>
-    <span>📊 数据决策</span>
+    <span>🔗 团购拉新</span>
+    <span>💳 会员锁客</span>
+    <span>📊 数据驱动</span>
   </div>
   <div class="scroll-hint"><span>向下探索</span><div class="arrow"></div></div>
 </div>
@@ -305,52 +310,52 @@ html{scroll-behavior:smooth;}
 <!-- 01 Diagnosis -->
 <div class="section" id="diagnosis">
   <div class="section-label">Diagnosis</div>
-  <h2 class="section-title">门店诊断 · <em>4.7⭐背后的增长瓶颈</em></h2>
+  <h2 class="section-title">门店诊断 · <em>4.7⭐情怀背后，差一道数字化的光</em></h2>
   <div class="section-divider"></div>
-  <p class="section-sub">评分领跑领世郡，但数字化工具缺位导致单量天花板明显。以下是四个关键痛点。</p>
+  <p class="section-sub">不做预制菜、不用冻货、用心做餐——山林小巷的底子太硬了。但评分和口碑没有转化成该有的单量，核心卡在数字化工具缺位上。</p>
 
-  <div class="card" style="background:var(--white);">
+  <div class="card">
     <div class="diag-item">
       <div class="diag-icon green">✅</div>
       <div class="diag-text">
-        <h4>品质过硬 · 评分4.7⭐</h4>
-        <p>领世郡川菜馆口碑TOP级，菜品和体验已经验证。这是最宝贵的资产。</p>
+        <h4>品质硬 · 评分4.7⭐</h4>
+        <p>领世郡川菜口碑TOP级，"好吃不贵的情怀餐厅"定位精准，回头客基础好。</p>
       </div>
     </div>
     <div class="diag-item">
       <div class="diag-icon red">⚠️</div>
       <div class="diag-text">
         <h4>无智能点单 · 翻台效率低</h4>
-        <p>高峰期靠人工点单、人工结账，顾客排队等买单 → 翻台慢 → 单量上不去。</p>
+        <p>高峰期靠人工点单结账，顾客排队等买单→翻台慢→单量上不去。</p>
       </div>
     </div>
     <div class="diag-item">
       <div class="diag-icon red">⚠️</div>
       <div class="diag-text">
         <h4>团购活跃度不足</h4>
-        <p>4.7⭐的评分却没有对应的团购销量，线上曝光和转化链路断裂。</p>
+        <p>4.7⭐评分没有匹配的团购销量，线上曝光和转化链路断裂。</p>
       </div>
     </div>
     <div class="diag-item">
       <div class="diag-icon red">⚠️</div>
       <div class="diag-text">
         <h4>会员体系空白</h4>
-        <p>没有储值、积分、会员日，老客来了吃完就走，复购全靠缘分。</p>
+        <p>没有储值/积分/会员日，老客吃完就走，复购全靠缘分。</p>
       </div>
     </div>
   </div>
 
-  <div class="highlight gold">
-    <p><strong>核心结论：</strong>山林小巷有最好的底子（4.7⭐），缺的不是口味而是<strong>「数字化效率工具」</strong>。引入美团智能版收银 + 补齐运营链路，单量至少翻1.5-2倍，而评分只会更高不会更低——因为体验更好了。</p>
+  <div class="highlight wine">
+    <strong>核心结论：</strong>山林小巷有最好的底子（4.7⭐+不做预制菜的情怀），缺的不是口味而是<strong>「数字化效率」</strong>。引入美团智能版收银 + 补齐运营链路，单量预计翻1.5-2倍，评分只会更高——体验好了，评价自然更好。
   </div>
 </div>
 
 <!-- 02 Upgrade -->
 <div class="section" id="upgrade">
   <div class="section-label">Smart POS</div>
-  <h2 class="section-title">美团智能版收银 · <em>从1到10的升级</em></h2>
+  <h2 class="section-title">美团智能版收银 · <em>从1到10，情怀也需要效率</em></h2>
   <div class="section-divider"></div>
-  <p class="section-sub">4.7⭐的餐厅需要的不是"有没有收银"，而是"收银能不能帮赚钱"。智能版收银=收银+点餐+团购+会员+数据，一套系统闭环。</p>
+  <p class="section-sub">4.7⭐的情怀餐厅需要的不是"有没有收银"，而是"收银能不能帮赚钱"。智能版收银=收银+点餐+团购+会员+数据，一套闭环。</p>
 
   <div class="flow-steps">
     <div class="flow-step">
@@ -361,12 +366,12 @@ html{scroll-behavior:smooth;}
     <div class="flow-step">
       <div class="step-num">2</div>
       <div class="step-title">智能买单</div>
-      <div class="step-desc">吃完扫码结账→自动核销团购→走人</div>
+      <div class="step-desc">吃完扫码结账→核销团购→走人</div>
     </div>
     <div class="flow-step">
       <div class="step-num">3</div>
       <div class="step-title">团购自动核</div>
-      <div class="step-desc">团购券一码核销→不排队不离店</div>
+      <div class="step-desc">团购券一码核销，不排队不滞留</div>
     </div>
     <div class="flow-step">
       <div class="step-num">4</div>
@@ -377,309 +382,300 @@ html{scroll-behavior:smooth;}
 
   <div class="grid-2" style="margin-top:10px;">
     <div class="card">
-      <span class="badge-tag forest">📱 扫码点餐</span>
-      <h3>告别"服务员，点菜"的排队</h3>
+      <span class="badge-tag wine">📱 扫码点餐</span>
+      <h3>高峰期不再"服务员，点菜！"</h3>
       <p>
       <strong>现状：</strong>高峰期服务员忙不过来，客人催着点菜，体验下降。<br>
-      <strong>升级后：</strong>每桌放点餐码 → 客人扫码看菜单 → 自助下单 → 后厨直接出票。<br><br>
-      • 减少1个点菜服务员的人力（年省5万+）<br>
-      • 翻台效率提升30%以上<br>
-      • 菜单图文并茂 → 客单价自然提升<br>
-      • 老板设计师出身 → 菜单页面设计可以由他亲自把控
+      <strong>升级后：</strong>每桌放点餐码→客人扫码看菜单→自助下单→后厨直接出票。<br><br>
+      ✅ 减少1个点菜服务员的人力（年省5万+）<br>
+      ✅ 翻台效率提升30%<br>
+      ✅ 菜单图文并茂→客单价自然提升<br>
+      ✅ 老板设计师→菜单页面可以自由设计
       </p>
     </div>
     <div class="card">
       <span class="badge-tag ember">💰 智能买单</span>
-      <h3>顾客不用等 · 翻台自然快</h3>
+      <h3>顾客不等单，翻台自然快</h3>
       <p>
-      <strong>现状：</strong>吃完喊买单→服务员打单→顾客扫码付款→等确认。<br>
-      <strong>升级后：</strong>扫码自助结账 → 团购券自动核销 → 直接走人。<br><br>
-      • 每桌节省3-5分钟买单时间<br>
-      • 高峰期=多翻1-2桌<br>
-      • 一桌¥88客单价 × 多翻2桌 = 多赚¥176/天<br>
-      • 一个月多赚¥5,280
+      <strong>现状：</strong>吃完喊买单→打单→扫码付款→等确认。<br>
+      <strong>升级后：</strong>扫码自助结账→团购券自动核销→直接走人。<br><br>
+      ✅ 每桌节省3-5分钟买单时间<br>
+      ✅ 高峰期=多翻1-2桌<br>
+      ✅ 多翻2桌×¥88客单=多赚¥176/天<br>
+      ✅ 一个月多赚¥5,280
       </p>
     </div>
   </div>
 
-  <div class="highlight forest">
-    <p><strong>推荐配置（山林小巷专配）：</strong><br>
+  <div class="highlight ember">
+    <strong>推荐配置（山林小巷专配）：</strong><br>
     📟 智能收银机 × 1台 &nbsp;·&nbsp; 🪪 扫码点餐桌贴 × 15张 &nbsp;·&nbsp; 🖨️ 后厨打印机 × 1台<br>
-    📺 KDS厨显 × 1台 &nbsp;·&nbsp; 📱 扫码枪 × 1台（团购核销）<br>
-    <strong>参考报价：¥1,800-2,500</strong>（具体按门店实际配置咨询销售）</p>
+    📺 KDS厨显 × 1台 &nbsp;·&nbsp; 📱 扫码枪 × 1台<br>
+    <strong>参考报价：¥1,800-2,500</strong>
   </div>
 </div>
 
-<!-- 03 点单体验 -->
+<!-- 03 点单 -->
 <div class="section" id="order">
   <div class="section-label">Dining Experience</div>
   <h2 class="section-title">智能点单 · <em>设计师老板的菜单美学</em></h2>
   <div class="section-divider"></div>
-  <p class="section-sub">老板是设计师——扫码点餐的菜单页面可以做得像一本<strong>「迷你画册」</strong>。菜品摄影、排版、色彩搭配，这些设计师的强项在扫码点餐上能直接变现。</p>
+  <p class="section-sub">老板是设计师——扫码点餐的菜单可以做得像一本<strong>「川卤酒馆的菜单画册」</strong>。一碗香辣蟹的照片拍得好看，顾客看了就想点，这就是设计师的降维打击。</p>
 
   <div class="grid-3">
-    <div class="card" style="text-align:center;padding:24px 16px;">
-      <div style="font-size:36px;margin-bottom:8px;">📸</div>
+    <div class="card" style="text-align:center;padding:20px 14px;">
+      <div style="font-size:32px;margin-bottom:6px;">📸</div>
       <h3 style="font-size:14px;">菜品摄影</h3>
-      <p style="font-size:13px;">老板设计师亲自拍→每道菜都是一张海报，顾客看了就想点</p>
+      <p style="font-size:13px;">每道菜拍出"食欲感"→顾客划到就想下单</p>
     </div>
-    <div class="card" style="text-align:center;padding:24px 16px;">
-      <div style="font-size:36px;margin-bottom:8px;">🎨</div>
+    <div class="card" style="text-align:center;padding:20px 14px;">
+      <div style="font-size:32px;margin-bottom:6px;">🎨</div>
       <h3 style="font-size:14px;">品牌排版</h3>
-      <p style="font-size:13px;">山林小巷的品牌色、字体、排版风格统一，和店内装修呼应</p>
+      <p style="font-size:13px;">川卤酒馆的品牌色+字体统一，和店内风格呼应</p>
     </div>
-    <div class="card" style="text-align:center;padding:24px 16px;">
-      <div style="font-size:36px;margin-bottom:8px;">📊</div>
+    <div class="card" style="text-align:center;padding:20px 14px;">
+      <div style="font-size:32px;margin-bottom:6px;">📈</div>
       <h3 style="font-size:14px;">数据引导</h3>
-      <p style="font-size:13px;">招牌菜置顶+推荐组合+"必点"标签 → 不知不觉提高客单价</p>
+      <p style="font-size:13px;">招牌菜置顶+"必点"标签→不知不觉提高客单价</p>
     </div>
   </div>
 
-  <div class="highlight dark">
-    <p><strong>💡 设计师老板的隐藏优势：</strong>扫码点餐的菜单页面大多数餐厅都做得"能用就行"。但山林小巷的老板是设计师——<strong>菜单页面的设计本身就是品牌竞争力</strong>。好看的菜单 → 顾客多拍几张照片 → 发朋友圈/小红书 → 免费曝光！这就是设计师老板的"降维打击"。</p>
+  <div class="highlight wood">
+    <strong>设计师老板的隐藏优势：</strong>大多数餐厅的扫码菜单"能用就行"。但山林小巷的老板是设计师——<strong>菜单本身就是品牌竞争力。</strong>好看的菜单→顾客多拍几张→发朋友圈/小红书→免费曝光！这就是设计师的"降维打击"。
   </div>
 </div>
 
-<!-- 04 团购运营 -->
+<!-- 04 团购 -->
 <div class="section" id="groupon">
   <div class="section-label">Group Buying</div>
   <h2 class="section-title">团购运营 · <em>4.7⭐不该只有这点销量</em></h2>
   <div class="section-divider"></div>
-  <p class="section-sub">评分4.7⭐是领世郡川菜馆的天花板，但团购销量没有匹配这个评分。核心是团购产品设计和推广链路没打通。</p>
+  <p class="section-sub">评分领世郡川菜天花板，但团购销量没跟上。核心是团购产品设计和推广链路没打通。</p>
 
   <div class="table-wrap">
     <table>
-      <tr><th style="width:22%;">团购产品</th><th style="width:15%;">定价</th><th>策略说明</th></tr>
-      <tr><td><strong>🎯 双人甄选套餐</strong></td><td><strong>¥128</strong></td><td>3道招牌菜+主食+饮品，人均¥64，降低新客尝鲜门槛</td></tr>
-      <tr><td><strong>🎯 4人欢聚套餐</strong></td><td><strong>¥268</strong></td><td>6道菜+主食+饮品，人均¥67，适合家庭/朋友聚餐</td></tr>
-      <tr><td><strong>🎯 招牌单品券</strong></td><td><strong>¥9.9-29.9</strong></td><td>招牌毛血旺/水煮鱼特价券→引流到店再加菜</td></tr>
-      <tr><td><strong>🎯 下午茶券</strong></td><td><strong>¥19.9</strong></td><td>凉菜+饮品组合，填补14:00-17:00低谷时段</td></tr>
+      <tr><th class="wine-bg" style="width:22%;">团购产品</th><th class="wine-bg" style="width:12%;">定价</th><th class="wine-bg">策略说明</th></tr>
+      <tr><td><strong>🎯 双人甄选套餐</strong></td><td><strong>¥128</strong></td><td>招牌香辣蟹+川菜+主食，人均¥64，降低尝鲜门槛</td></tr>
+      <tr><td><strong>🎯 4人欢聚套餐</strong></td><td><strong>¥268</strong></td><td>6道菜+酒水，人均¥67，适合朋友聚餐</td></tr>
+      <tr><td><strong>🎯 招牌单品券</strong></td><td><strong>¥9.9-29.9</strong></td><td>香辣蟹/水煮鱼特价券→引流到店再加菜</td></tr>
+      <tr><td><strong>🎯 下午微醺券</strong></td><td><strong>¥19.9</strong></td><td>川味小吃+精酿，填补14:00-17:00低谷时段</td></tr>
     </table>
   </div>
 
-  <div class="grid-2" style="margin-top:10px;">
+  <div class="grid-2" style="margin-top:8px;">
     <div class="card">
-      <span class="badge-tag gold">📈 推广通投放</span>
+      <span class="badge-tag wood">📈 推广通投放</span>
       <p>
-      <strong>投放方案：</strong><br>
-      • 推广通每天¥50-100，定向领世郡3公里<br>
-      • 重点推"双人甄选套餐"（引流款）<br>
-      • 投放时段：午市10:00-12:00，晚市16:00-18:00<br>
-      • 关注指标：曝光量→点击率→团购核销率<br><br>
-      <strong>预估效果：</strong><br>
-      ¥50/天 → 日均曝光2,000+ → 团购订单15-20单
+      <strong>投放方案：</strong>每天¥50-100，定向领世郡3公里<br>
+      重点推"双人甄选套餐"引流款<br>
+      投放时段：午市10:00-12:00，晚市16:00-18:00<br><br>
+      <strong>预估：</strong>¥50/天→日均曝光2,000+→团购订单15-20单
       </p>
     </div>
     <div class="card">
       <span class="badge-tag ember">⭐ 评分优势最大化</span>
       <p>
-      <strong>4.7⭐的团购转化率远高于普通店：</strong><br><br>
-      • 用户看到"4.7⭐" → 信任感拉满 → 下单转化率翻倍<br>
-      • 现在缺的只是曝光量（推广通没投、团购套餐没优化）<br>
-      • 做好团购产品设计+推广通投放 → 团购订单至少涨3倍<br><br>
-      <strong>💡 和龙凤打边炉的逻辑一样——好评分+好团购=好生意</strong>
+      <strong>4.7⭐的团购转化率远高于普通店：</strong><br>
+      用户看到"4.7⭐"→信任感拉满→下单转化率翻倍。<br>
+      现在缺的只是曝光量。<br>
+      做好团购产品+推广通，团购订单至少涨3倍。
       </p>
     </div>
   </div>
 </div>
 
-<!-- 05 会员体系 -->
+<!-- 05 会员 -->
 <div class="section" id="member">
   <div class="section-label">Membership</div>
-  <h2 class="section-title">会员体系 · <em>让4.7⭐的客人变成回头客</em></h2>
+  <h2 class="section-title">会员体系 · <em>让来过的客人都记住你</em></h2>
   <div class="section-divider"></div>
-  <p class="section-sub">来山林小巷吃过的人92%都说好吃（4.7⭐），但多少人"吃了一次就走了"？会员体系就是解决这个问题的。</p>
+  <p class="section-sub">来山林小巷吃过的人都说好（4.7⭐），但多少人"吃了一次就走了"？会员体系就是锁客的钥匙。</p>
 
   <div class="grid-2">
     <div class="card">
-      <span class="badge-tag forest">💳 储值锁客</span>
+      <span class="badge-tag wine">💳 储值锁客</span>
       <p>
-      <strong>方案一：充值有礼</strong><br>
-      • 充200送30（相当于87折）<br>
-      • 充500送100（相当于83折）<br>
-      • 充1000送250（相当于8折）——适合常客/家庭客<br><br>
-      <strong>方案二：储值权益</strong><br>
-      • 储值会员享专属菜品9折<br>
-      • 生日当月送招牌菜1份<br>
-      • 每月会员日（18号）双倍积分
+      <strong>储值方案：</strong><br>
+      • 充200送30（87折）<br>
+      • 充500送100（83折）<br>
+      • 充1000送250（8折）<br><br>
+      <strong>储值权益：</strong><br>
+      • 专属菜品9折<br>
+      • 生日送香辣蟹1份<br>
+      • 每月18号会员日双倍积分
       </p>
     </div>
     <div class="card">
-      <span class="badge-tag gold">🎯 积分体系</span>
+      <span class="badge-tag wood">🎯 积分体系</span>
       <p>
       <strong>消费1元=1积分</strong><br>
-      500积分 → 换凉菜1份<br>
-      1,000积分 → 换招牌菜1份<br>
-      2,000积分 → 换双人套餐券1张<br><br>
-      <strong>拉新积分</strong><br>
-      带朋友来消费 → 双方各加100积分<br>
-      发朋友圈定位 → 加50积分<br>
-      写优质评价 → 加100积分<br><br>
-      <strong>积分=复购引擎</strong>
-      顾客为了攒积分会优先选择你家
+      500分→换凉菜<br>
+      1,000分→换招牌菜<br>
+      2,000分→换双人套餐券<br><br>
+      <strong>拉新积分：</strong><br>
+      带朋友来→双方各加100分<br>
+      发朋友圈→加50分<br>
+      写优质评价→加100分
       </p>
     </div>
   </div>
 
-  <div class="highlight gold">
-    <p><strong>🎯 开业和会员结合——"双倍积分日"：</strong>每个月选1天作为"山林小巷会员日"（比如18号），当天到店消费双倍积分+专属折扣。制造"每个月18号去山林小巷"的消费习惯。</p>
+  <div class="highlight wine">
+    <strong>每个月18号——「山林小巷会员日」：</strong>当天到店双倍积分+专属折扣。制造"每个月18号去山林小巷"的消费习惯。配上"不做预制菜"的情怀故事，会员日就是品牌日。
   </div>
 </div>
 
 <!-- 06 KDS -->
 <div class="section" id="kds">
   <div class="section-label">Kitchen Display</div>
-  <h2 class="section-title">KDS厨房显示 · <em>高峰期不卡单</em></h2>
+  <h2 class="section-title">KDS厨房显示 · <em>川卤酒馆高峰期不卡单</em></h2>
   <div class="section-divider"></div>
-  <p class="section-sub">川菜馆高峰期后厨最乱——炒菜的、凉菜的、蒸菜的同时出餐。KDS让每道菜都有节奏。</p>
+  <p class="section-sub">川菜+卤味+酒馆，三个出品口——后厨乱不得。KDS让每道菜都有节奏。</p>
 
   <div class="grid-2">
     <div class="card">
-      <span class="badge-tag ember">🔥 川菜馆的厨房痛点</span>
+      <span class="badge-tag ember">🔥 痛点</span>
       <p>
-      • 高峰期（11:30-13:00 / 18:00-20:00）订单集中<br>
-      • 纸质小票容易湿、丢、看不清<br>
-      • 炒菜师傅不知道凉菜出了没 → 菜凑不齐<br>
-      • 顾客催菜 → 服务员跑厨房问 → 更乱<br>
-      • 新来的厨师不熟菜单 → 出餐顺序混乱
+      • 高峰期订单集中<br>
+      • 纸质小票容易湿/丢<br>
+      • 川菜档和卤味档容易混<br>
+      • 催菜→跑厨房问→更乱<br>
+      • 出餐顺序靠吼
       </p>
     </div>
     <div class="card">
-      <span class="badge-tag forest">✅ KDS解决方案</span>
+      <span class="badge-tag wine">✅ 方案</span>
       <p>
-      • 厨房挂1台15寸厨显 → 所有订单按时间排序<br>
-      • 凉菜/热菜/蒸菜分色显示 → 各司其职<br>
-      • 超时自动变色提醒："这桌等了20分钟！"<br>
-      • 菜品出齐自动亮灯 → 传菜员直接端走<br>
-      • 老板手机看实时出餐进度<br><br>
+      • 后厨挂1台厨显→订单按时间排序<br>
+      • 川菜/卤味/凉菜分色显示<br>
+      • 超时自动变色提醒<br>
+      • 菜齐自动亮灯→传菜员端走<br>
+      • 老板手机看实时进度<br><br>
       <strong>翻台率提升25%，催菜率下降60%</strong>
       </p>
     </div>
   </div>
 </div>
 
-<!-- 07 线上优化 -->
+<!-- 07 线上 -->
 <div class="section" id="online">
   <div class="section-label">Online Presence</div>
-  <h2 class="section-title">线上优化 · <em>让领世郡的人先知道</em></h2>
+  <h2 class="section-title">线上优化 · <em>让领世郡3公里都知道你</em></h2>
   <div class="section-divider"></div>
-  <p class="section-sub">评分4.7⭐但线上曝光不够 → 领世郡3公里内还有至少60%的人不知道山林小巷。</p>
+  <p class="section-sub">4.7⭐但线上曝光不够→领世郡至少还有60%的人不知道"山林小巷·川卤酒馆"。</p>
 
   <div class="grid-2">
     <div class="card">
-      <span class="badge-tag forest">📱 美团/点评页面优化</span>
+      <span class="badge-tag wood">📱 美团/点评页面</span>
       <p>
-      <strong>需要优化的点：</strong><br>
-      • 头图：用设计师拍的质感大片（不要用手机随意拍）<br>
-      • 菜单：照片重新拍，每道菜都有"食欲感"<br>
-      • 团购套餐重新设计：视觉统一、文案有记忆点<br>
-      • 增加"商家相册" → 展示店内装修细节+菜品特写<br>
-      • 完善营业信息、电话、停车指引<br><br>
-      <strong>设计师老板的优势：</strong>所有视觉内容自己拍自己修，0外包成本，还比别人好看10倍
+      <strong>优化项：</strong><br>
+      • 头图：用设计师拍的质感大片<br>
+      • 菜单：每道菜拍出食欲感<br>
+      • 团购套餐：视觉统一+文案有记忆点<br>
+      • 商家相册：展示香辣蟹+店内环境<br>
+      • 完善营业信息和停车指引<br><br>
+      <strong>设计师老板的优势：</strong>所有视觉自己拍自己修，0外包，还比别人好看10倍
       </p>
     </div>
     <div class="card">
-      <span class="badge-tag gold">🎬 抖音+小红书</span>
+      <span class="badge-tag ember">🎬 抖音+小红书</span>
       <p>
-      <strong>低成本内容策略：</strong><br><br>
       <strong>抖音同城：</strong><br>
-      • 拍川菜出锅的"锅气"——热油浇在辣椒上的瞬间<br>
-      • "领世郡4.7分的川菜馆，藏在小巷子里"<br>
-      • 抖加¥50/条，定向领世郡3公里<br><br>
+      • 拍香辣蟹出锅的"锅气"<br>
+      • "领世郡4.7分的川卤酒馆"<br>
+      • 抖加¥50/条定向领世郡<br><br>
       <strong>小红书：</strong><br>
-      • 老板设计师出身 → 店内装修本身就是内容<br>
-      • "天津领世郡｜藏在树荫里的川菜小馆"<br>
-      • 拍照发小红书 → 定位山林小巷<br>
-      • 不花钱的自然流量
+      • 设计师老板→店内就是内容<br>
+      • "藏在天津领世郡的川卤酒馆"<br>
+      • 每道菜拍出质感→免费种草<br><br>
+      <strong>老板的视频号2522人关注→本身就是流量基础</strong>
       </p>
     </div>
   </div>
 
-  <div class="highlight forest">
-    <p><strong>📸 设计师老板的"小红书"策略：</strong>大多数川菜馆的老板不会拍照、不会排版。但山林小巷的老板是设计师——<strong>店内的每一个角落（餐具、摆盘、灯光、装修细节）都是小红书素材</strong>。每周发2-3条小红书，定位店铺，3个月就能成为领世郡"最出片的川菜馆"。0成本，纯靠审美。</p>
+  <div class="highlight wood">
+    <strong>设计师老板的"小红书"策略：</strong>大多数川菜馆的老板不会拍照。但山林小巷的老板是设计师——店内每个角落、每道菜的摆盘、暖黄的灯光、木质的桌椅，都是小红书素材。每周2-3条，3个月成为领世郡"最出片的川卤酒馆"。0成本，纯靠审美。
   </div>
 </div>
 
-<!-- 08 数据决策 -->
+<!-- 08 数据 -->
 <div class="section" id="data">
   <div class="section-label">Data Insights</div>
-  <h2 class="section-title">数据决策 · <em>靠感觉不如看报表</em></h2>
+  <h2 class="section-title">数据决策 · <em>靠情怀开店，靠数据赚钱</em></h2>
   <div class="section-divider"></div>
-  <p class="section-sub">很多4.7⭐的店"凭感觉经营"——哪道菜赚钱、哪个时段人少、哪桌客人回头了——全靠老板脑子记。智能版收银自带经营报表，让数据说话。</p>
+  <p class="section-sub">"不做预制菜"是情怀，"哪道菜最赚钱"需要数据。智能版收银自带经营报表，让数据说话。</p>
 
   <div class="grid-3">
-    <div class="card" style="text-align:center;padding:20px 14px;">
-      <div style="font-size:30px;margin-bottom:6px;">🥇</div>
+    <div class="card" style="text-align:center;padding:18px 12px;">
+      <div style="font-size:28px;margin-bottom:4px;">🥇</div>
       <h3 style="font-size:13px;">菜品排行</h3>
-      <p style="font-size:12px;">哪道菜点单最多、哪道菜利润最高→指导菜单优化</p>
+      <p style="font-size:12px;">哪道菜点单最多→指导菜单优化</p>
     </div>
-    <div class="card" style="text-align:center;padding:20px 14px;">
-      <div style="font-size:30px;margin-bottom:6px;">⏰</div>
+    <div class="card" style="text-align:center;padding:18px 12px;">
+      <div style="font-size:28px;margin-bottom:4px;">⏰</div>
       <h3 style="font-size:13px;">客流时段</h3>
-      <p style="font-size:12px;">几点人多几点人少→低谷时段做活动拉流量</p>
+      <p style="font-size:12px;">低谷时段做活动拉流量</p>
     </div>
-    <div class="card" style="text-align:center;padding:20px 14px;">
-      <div style="font-size:30px;margin-bottom:6px;">🔄</div>
+    <div class="card" style="text-align:center;padding:18px 12px;">
+      <div style="font-size:28px;margin-bottom:4px;">🔄</div>
       <h3 style="font-size:13px;">复购分析</h3>
-      <p style="font-size:12px;">哪些客人常来→他们爱点啥→针对性推活动</p>
+      <p style="font-size:12px;">哪些客人常来→针对性推活动</p>
     </div>
   </div>
 
   <div class="table-wrap">
     <table>
-      <tr><th>数据维度</th><th>能看到什么</th><th>能做什么决策</th></tr>
+      <tr><th class="wine-bg">数据维度</th><th class="wine-bg">能看到什么</th><th class="wine-bg">能做什么决策</th></tr>
       <tr><td><strong>日营收报表</strong></td><td>今天赚了多少、同比上周</td><td>活动效果评估、目标制定</td></tr>
-      <tr><td><strong>菜品销售榜</strong></td><td>毛血旺卖了30份、水煮鱼20份</td><td>砍掉滞销菜、推招牌菜套餐</td></tr>
-      <tr><td><strong>高峰时段</strong></td><td>12:00-12:30排长队、14:00没人</td><td>下午茶券引流、预约错峰</td></tr>
-      <tr><td><strong>会员消费</strong></td><td>张先生本月来了5次、李女士1次</td><td>给高频客送券、唤醒沉睡客</td></tr>
+      <tr><td><strong>菜品销售榜</strong></td><td>香辣蟹卖了30份、水煮鱼20份</td><td>主推爆款、砍掉滞销</td></tr>
+      <tr><td><strong>高峰时段</strong></td><td>12:00-12:30排长队、14:00没人</td><td>下午茶券引流</td></tr>
+      <tr><td><strong>会员消费</strong></td><td>高频客一个月来几次</td><td>给高频客送券、唤醒沉睡客</td></tr>
     </table>
   </div>
 
-  <div class="highlight gold">
-    <p><strong>💡 数据是设计师老板的"第二双眼睛"：</strong>设计师靠审美做菜品和空间，而数据告诉他"哪道菜真正赚钱、什么时候该推什么活动"。两个能力加起来 = 领世郡川菜天花板。</p>
+  <div class="highlight ember">
+    <strong>数据是设计师老板的"第二双眼睛"：</strong>设计师靠审美做菜品和空间，数据告诉他"哪道菜真正赚钱、什么时候该推什么活动"。两个能力加起来=领世郡川卤酒馆天花板。
   </div>
 </div>
 
-<!-- 09 部署计划 -->
+<!-- 09 部署 -->
 <div class="section" id="plan" style="border-bottom:none;">
   <div class="section-label">Implementation</div>
-  <h2 class="section-title">部署计划 · <em>7天上线·快速见效</em></h2>
+  <h2 class="section-title">部署计划 · <em>7天极速上线</em></h2>
   <div class="section-divider"></div>
-  <p class="section-sub">山林小巷已经是成熟运营的店，不需要漫长的筹备期。硬件到货+安装调试+员工培训，7天就能上线。</p>
+  <p class="section-sub">山林小巷已是成熟运营店，硬件到货+安装调试+员工培训，7天就能上线。</p>
 
   <div class="table-wrap">
     <table>
-      <tr><th style="width:14%;">时间</th><th style="width:18%;">阶段</th><th>关键动作</th></tr>
-      <tr><td><strong>第1-2天</strong></td><td>📦 签约到货</td><td>签订智能版收银合同、硬件发货（收银机+KDS+打印机+桌贴）</td></tr>
-      <tr><td><strong>第3-4天</strong></td><td>🔧 安装调试</td><td>硬件安装、网络布线、菜单录入（设计师老板亲自排版菜品图）、团购套餐上架</td></tr>
-      <tr><td><strong>第5-6天</strong></td><td>👨‍🍳 员工培训</td><td>点餐流程、团购核销、会员操作、KDS使用——全员培训2小时</td></tr>
-      <tr><td><strong>第7天</strong></td><td>🚀 正式上线</td><td>扫码点餐桌贴全部就位、推广通开启、团购套餐上线、会员储值活动开启</td></tr>
+      <tr><th class="wine-bg" style="width:14%;">时间</th><th class="wine-bg" style="width:18%;">阶段</th><th class="wine-bg">关键动作</th></tr>
+      <tr><td><strong>第1-2天</strong></td><td>📦 签约到货</td><td>签订智能版收银合同、硬件发货</td></tr>
+      <tr><td><strong>第3-4天</strong></td><td>🔧 安装调试</td><td>硬件安装、网络布线、菜单录入、团购上架</td></tr>
+      <tr><td><strong>第5-6天</strong></td><td>👨‍🍳 员工培训</td><td>点餐/核销/会员/KDS操作，全员2小时</td></tr>
+      <tr><td><strong>第7天</strong></td><td>🚀 正式上线</td><td>扫码桌贴就位、推广通开启、团购+会员上线</td></tr>
     </table>
   </div>
 
   <div class="stats-row">
     <div class="stat-item"><div class="num">7天</div><div class="lbl">极速上线</div></div>
-    <div class="stat-item gold"><div class="num">+30%</div><div class="lbl">翻台效率</div></div>
-    <div class="stat-item ember"><div class="num">3倍</div><div class="lbl">团购订单预期</div></div>
+    <div class="stat-item ember"><div class="num">+30%</div><div class="lbl">翻台效率</div></div>
+    <div class="stat-item wood"><div class="num">3倍</div><div class="lbl">团购预期</div></div>
     <div class="stat-item"><div class="num">1.5-2x</div><div class="lbl">单量增长预估</div></div>
   </div>
 
   <div class="quote-block">
-    <p>山林小巷的底子太好——<strong>4.7⭐的评分、设计师老板的审美、领世郡的黄金位置</strong>。缺的不是品质，而是一套让"好产品->好体验->好生意"高效流转的数字化系统。美团智能版收银就是那个连接的齿轮。</p>
-    <p style="margin-top:10px;font-weight:300;">一旦系统上线 → 扫码点餐提效 → 团购运营拉新 → 会员锁客复购 → 数据驱动迭代。四步走完，<strong>领世郡川菜第一，不只是评分第一，销量也是第一。</strong></p>
+    <p>山林小巷的底子太好——<strong>4.7⭐评分、设计师老板的审美、"不做预制菜"的情怀、领世郡的黄金位置</strong>。缺的不是品质，而是一套让"好产品→好体验→好生意"高效流转的数字化系统。</p>
+    <p style="margin-top:8px;font-weight:300;">一旦系统上线→扫码点餐提效→团购运营拉新→会员锁客复购→数据驱动迭代。<strong>领世郡川卤酒馆第一，不只是评分第一，销量也是第一。</strong></p>
   </div>
 </div>
 
 </div><!-- /container -->
 
 <div class="footer">
-  🏔️ 山林小巷 · 数字化升级方案 · 2026年6月<br>
-  领世郡 · 长青街道梨双路与领世路交叉口南60米<br>
-  美团智能版收银 · 从1到10的升级
+  🏮 山林小巷·川卤酒馆 · 数字化升级方案 · 2026年6月<br>
+  领世郡·长青街道梨双路与领世路交叉口南60米 · #不做预制菜 #好吃不贵的情怀餐厅
 </div>
 
 <script>
-// Nav scroll highlight
 document.querySelectorAll('nav a').forEach(a => {
   a.addEventListener('click', function(e) {
     document.querySelectorAll('nav a').forEach(x => x.classList.remove('active'));
@@ -697,6 +693,5 @@ const observer = new IntersectionObserver(entries => {
 }, {rootMargin:'-55px 0px -50% 0px'});
 document.querySelectorAll('.section').forEach(s => observer.observe(s));
 </script>
-
 </body>
 </html>
